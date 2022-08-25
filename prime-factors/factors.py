@@ -14,24 +14,21 @@ class Factors(object):
     def __find_factors(self, number):
         factors = []
         
-        static_primes = [2, 3, 5, 7, 11, 13, 23]
+        current_factor = 2
 
-        last_mod = None
-        i = 0
+        while number > 1:
+            last_mod = number % current_factor
 
-        while not self.primes.is_prime(number):
-            while i < len(static_primes):
-                last_mod = number % static_primes[i]
-
-                if last_mod != 0:
-                    i += 1
-                    continue
-                
-                factors.append(static_primes[i])
-                number = int(number / static_primes[i])
+            if self.__is_multiple(number, current_factor):
+                factors.append(current_factor)
+                number = int(number / current_factor)
+            else:
+                current_factor = self.primes.next_prime(current_factor) 
 
         return factors
 
+    def __is_multiple(self, number, factor):
+        return number % factor == 0
 
 
 

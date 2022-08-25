@@ -47,3 +47,31 @@ class PrimesTests(unittest.TestCase):
         primes = Primes()
 
         self.assertTrue(primes.is_prime(29))
+
+    def test_next_prime_from_two_is_three(self):
+        primes = Primes()
+
+        next_prime = primes.next_prime(2)
+
+        self.assertEqual(3, next_prime)
+
+    def test_next_prime_from_three_is_five(self):
+        primes = Primes()
+
+        next_prime = primes.next_prime(3)
+
+        self.assertEqual(5, next_prime)
+
+    def test_next_prime_from_four_is_five(self):
+        primes = Primes()
+
+        next_prime = primes.next_prime(4)
+
+        self.assertEqual(5, next_prime)
+
+    def test_next_prime_from_23_is_29(self):
+        primes = Primes()
+
+        next_prime = primes.next_prime(23)
+
+        self.assertEqual(29, next_prime)

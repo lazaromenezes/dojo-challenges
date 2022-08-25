@@ -13,5 +13,13 @@ class Primes(object):
 
         return True
 
+    def next_prime(self, number):
+        next_prime = number + 1
+        
+        while not self.is_prime(next_prime):
+            next_prime += 1
+
+        return next_prime
+
     def __is_odd(self, number):
         return number % 2 == 1

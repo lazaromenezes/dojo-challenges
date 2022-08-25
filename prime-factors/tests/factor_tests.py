@@ -51,3 +51,10 @@ class FactorsTests(unittest.TestCase):
         result = factors.breakup_primes(276)
 
         self.assertEqual([2, 2, 3, 23], result)
+
+    def test_breakup_primes_return_factors_for_3828(self):
+        factors = Factors()
+
+        result = factors.breakup_primes(3828)
+
+        self.assertEqual([2, 2, 3, 11, 29], result)
